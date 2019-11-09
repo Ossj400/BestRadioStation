@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestRadioStation", "BestRadioStation\BestRadioStation.csproj", "{1C95018C-3D80-44C4-8F04-9C35389D3265}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C95018C-3D80-44C4-8F04-9C35389D3265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C95018C-3D80-44C4-8F04-9C35389D3265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C95018C-3D80-44C4-8F04-9C35389D3265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C95018C-3D80-44C4-8F04-9C35389D3265}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFE4D07B-D10C-4C09-9315-A3415AE5A218}
+	EndGlobalSection
+EndGlobal
