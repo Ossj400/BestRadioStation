@@ -32,7 +32,7 @@ namespace BestRadioStation
             int i = 0;
             foreach (var Names in radioStNameHtmlDoc)
             {
-                arrWithNames[i] = string.Format("{0}). :{1}", i + 1, Names.InnerText);
+                arrWithNames[i] = string.Format("{0}). {1}", i + 1, Names.InnerText);
                 i = i + 1;
             }
 
@@ -71,6 +71,12 @@ namespace BestRadioStation
         public string[] GetRadioUrl()
         {
             return radiostationsUrl;
+        }
+
+        public string WhichElement(int elem)
+        {
+            string element = radiostationsUrl[elem].ToString();
+            return element;
         }
 
 

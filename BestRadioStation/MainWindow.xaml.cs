@@ -30,10 +30,10 @@ namespace BestRadioStation
 
         }
 
-        
+        Scrapper Scrap = new Scrapper();
         private string bindList(string url)
         {
-            Scrapper Scrap = new Scrapper();
+
             Scrap.GetHtmlNotAsync(url);
             ListRadioStat.ItemsSource = Scrap.GetRadioName();
             return null;
@@ -49,8 +49,64 @@ namespace BestRadioStation
 
         private void BtPsytrance_Click(object sender, RoutedEventArgs e)
         {
-            var url_Psytrance = "https://www.internet-radio.com/stations/psytrance/";
-            bindList(url_Psytrance);
+            var url = "https://www.internet-radio.com/stations/psytrance/";
+            bindList(url);
+        }
+
+        private void BtDeep_House_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/deep%20house/";
+            bindList(url);
+        }
+
+        private void BtClassic_Rock_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/classic%20rock/";
+            bindList(url);
+        }
+
+        private void BtInstrumental_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/instrumental/";
+            bindList(url);
+        }
+
+        private void BtDance_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/dance/";
+            bindList(url);
+        }
+
+        private void BtChristmas_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/christmas/";
+            bindList(url);
+        }
+
+        private void BtClassical_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/classical/";
+            bindList(url);
+        }
+
+        private void BtHipHop_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/hip%20hop/";
+            bindList(url);
+        }
+
+        private void BtKpop_Click(object sender, RoutedEventArgs e)
+        {
+            var url = "https://www.internet-radio.com/stations/soundtracks/";
+            bindList(url);
+        }
+
+        private void ListRadioStat_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            int element = (ListRadioStat.SelectedIndex);
+            string xd = Scrap.WhichElement(element).ToString();   /// crash po wejsciu w inny rodzaj muzyki 
+            MessageBox.Show(xd);
         }
     }
 }
