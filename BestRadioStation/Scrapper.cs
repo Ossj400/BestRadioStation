@@ -57,6 +57,19 @@ namespace BestRadioStation
                     arrWithUrls[k] = urls.Substring(0, index);
                     k = k + 1;
                 }
+                
+            }
+            int l = 0;
+            foreach (var urlsm3u in arrWithUrls)
+            {
+                if (urlsm3u.Contains("listen.pls"))
+                {
+                    arrWithUrls[l] = urlsm3u.Replace("listen.pls", "m3u^");
+                    int index = arrWithUrls[l].IndexOf('^');
+                    arrWithUrls[l] = arrWithUrls[l].Substring(0, index);
+                    
+                }
+                l = l + 1;
             }
 
             radiostationsName = arrWithNames;
@@ -67,18 +80,15 @@ namespace BestRadioStation
         {
             return radiostationsName;
         }
-
         public string[] GetRadioUrl()
         {
             return radiostationsUrl;
         }
-
         public string WhichElement(int elem)
         {
             string element = radiostationsUrl[elem].ToString();
             return element;
         }
-
 
     }
 }

@@ -14,9 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
 using HtmlAgilityPack;
+using System.Media;
+
 
 namespace BestRadioStation
 {
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -27,10 +31,14 @@ namespace BestRadioStation
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         Scrapper Scrap = new Scrapper();
+
+        private void Sound()
+        {
+            new SoundPlayer(@"C:\Users\Artur\source\repos\BestRadioStation\button11.wav").Play();
+        }
         private string bindList(string url)
         {
 
@@ -40,73 +48,88 @@ namespace BestRadioStation
         }
         private void BtAmbient_Click(object sender, RoutedEventArgs e)
         {
-            var url_Ambient = "https://www.internet-radio.com/stations/ambient/";
+            Sound();
+            var url_Ambient = "https://www.internet-radio.com/stations/ambient/?sortby=listeners";
             bindList(url_Ambient);
         }
 
 
-        
-
         private void BtPsytrance_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/psytrance/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/psytrance/?sortby=listeners";
             bindList(url);
+
         }
 
         private void BtDeep_House_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/deep%20house/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/deep%20house/?sortby=listeners";
             bindList(url);
         }
 
         private void BtClassic_Rock_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/classic%20rock/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/classic%20rock/?sortby=listeners";
             bindList(url);
         }
 
         private void BtInstrumental_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/instrumental/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/instrumental/?sortby=listeners";
             bindList(url);
         }
 
         private void BtDance_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/dance/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/dance/?sortby=listeners";
             bindList(url);
         }
 
         private void BtChristmas_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/christmas/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/christmas/?sortby=listeners";
             bindList(url);
         }
 
         private void BtClassical_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/classical/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/classical/?sortby=listeners";
             bindList(url);
         }
 
         private void BtHipHop_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/hip%20hop/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/hip%20hop/?sortby=listeners";
             bindList(url);
         }
 
         private void BtKpop_Click(object sender, RoutedEventArgs e)
         {
-            var url = "https://www.internet-radio.com/stations/soundtracks/";
+            Sound();
+            var url = "https://www.internet-radio.com/stations/soundtracks/?sortby=listeners";
             bindList(url);
+
         }
 
         private void ListRadioStat_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             int element = (ListRadioStat.SelectedIndex);
-            string xd = Scrap.WhichElement(element).ToString();   /// crash po wejsciu w inny rodzaj muzyki 
-            MessageBox.Show(xd);
-        }
+            if (element >= 0)
+            {
+                string uri = Scrap.WhichElement(element).ToString();
+                MessageBox.Show(uri);
+                mediaElement.Source = new Uri(uri);
+                mediaElement.Play();
+            }
+           
+        }      
     }
 }
