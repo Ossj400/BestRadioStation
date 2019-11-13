@@ -125,11 +125,29 @@ namespace BestRadioStation
             if (element >= 0)
             {
                 string uri = Scrap.WhichElement(element).ToString();
-                MessageBox.Show(uri);
+                MessageBox.Show("Let's listen to this server: "+uri);
                 mediaElement.Source = new Uri(uri);
                 mediaElement.Play();
+             
             }
            
-        }      
+        }
+
+        private void BtStop_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Stop();
+        }
+
+        private void BtStart_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Play();
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            mediaElement.Volume = slider.Value;
+            VolumeLbl.Content = Convert.ToInt32(slider.Value*100).ToString() + " %";
+        }
+        
     }
 }
