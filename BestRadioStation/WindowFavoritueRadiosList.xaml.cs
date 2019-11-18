@@ -31,6 +31,10 @@ namespace BestRadioStation
         static int count;
         public int selectionFavListId;
 
+        private void CloseListWindow()
+        {
+            Close();
+        }
 
         private void listBox_SourceUpdated(object sender, DataTransferEventArgs e)
         {

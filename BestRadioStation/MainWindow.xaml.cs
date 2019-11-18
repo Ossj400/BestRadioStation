@@ -31,7 +31,7 @@ namespace BestRadioStation
         }
         Scrapper Scrap = new Scrapper();
         FavoritueRadioListManager favManager = new FavoritueRadioListManager();
-        WindowFavoritueRadiosList windowStations; 
+        WindowFavoritueRadiosList windowStations = new WindowFavoritueRadiosList(); 
 
         private void Sound()
         {
@@ -43,6 +43,159 @@ namespace BestRadioStation
             Scrap.GetHtmlNotAsync(url);
             ListRadioStat.ItemsSource = Scrap.GetRadioName();
             return null;
+        }
+
+        private void ListRadioStat_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int element = (ListRadioStat.SelectedIndex);
+            if (element >= 0)
+            {
+                Scrap.element = element;
+                string uri = Scrap.WhichElementUrl(element).ToString();
+                MessageBox.Show("Let's listen to this server: "+uri);
+                mediaElement.Source = new Uri(uri);
+                mediaElement.Play();           
+            }
+           
+        }
+
+        private void BtStop_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Stop();
+        }
+
+        private void BtStart_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Play();
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            mediaElement.Volume = slider.Value;
+            VolumeLbl.Content = Convert.ToInt32(slider.Value*500).ToString() + " %";
+        }
+
+        
+        private void BtOpenList_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                windowStations = new WindowFavoritueRadiosList();
+                favManager.readFromList();
+                windowStations.Show();
+            }
+            catch
+            {
+            }
+        }
+        
+        private void BtAddRadio_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                favManager.addToList(Scrap.WhichElementUrl(Scrap.element), Scrap.WhichElementName(Scrap.element));
+                windowStations.Close();
+                windowStations = new WindowFavoritueRadiosList();
+                windowStations.Show();
+            }
+            catch
+            {
+            }
+        }
+
+        private void BtPlayFromFavList_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int element = (windowStations.selectionFavListId);
+                if (element >= 0)
+                {
+                    string uri = windowStations.giveUrlFavList(windowStations.selectionFavListId).ToString();
+                    MessageBox.Show("Let's listen to this server: " + uri);
+                    mediaElement.Source = new Uri(uri);
+                    mediaElement.Play();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void BtDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                favManager.delete(windowStations.selectionFavListId);
+                windowStations.Close();
+                windowStations = new WindowFavoritueRadiosList();
+                windowStations.Show();
+            }
+            catch
+            {
+            }  
+        }
+
+        private void BtTop20_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/top%2040/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtPop_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/pop/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtAlternative_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/alternative/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtlEctronic_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/electronic/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtRock_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/rock/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtMetal_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/metal/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtSwing_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/swing/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtChill_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/chill/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtSoundtracks_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/soundtracks/?sortby=listeners";
+            bindList(url);
         }
         private void BtAmbient_Click(object sender, RoutedEventArgs e)
         {
@@ -115,146 +268,6 @@ namespace BestRadioStation
             var url = "https://www.internet-radio.com/stations/kpop/?sortby=listeners";
             bindList(url);
 
-        }
-
-        private void ListRadioStat_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int element = (ListRadioStat.SelectedIndex);
-            if (element >= 0)
-            {
-                Scrap.element = element;
-                string uri = Scrap.WhichElementUrl(element).ToString();
-                MessageBox.Show("Let's listen to this server: "+uri);
-                mediaElement.Source = new Uri(uri);
-                mediaElement.Play();           
-            }
-           
-        }
-
-        private void BtStop_Click(object sender, RoutedEventArgs e)
-        {
-            mediaElement.Stop();
-        }
-
-        private void BtStart_Click(object sender, RoutedEventArgs e)
-        {
-            mediaElement.Play();
-        }
-
-        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            mediaElement.Volume = slider.Value;
-            VolumeLbl.Content = Convert.ToInt32(slider.Value*500).ToString() + " %";
-        }
-
-        
-        private void BtOpenList_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                windowStations = new WindowFavoritueRadiosList();
-                favManager.readFromList();
-                windowStations.Show();
-            }
-            catch
-            {
-            }
-        }
-        
-        private void BtAddRadio_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                favManager.addToList(Scrap.WhichElementUrl(Scrap.element), Scrap.WhichElementName(Scrap.element));
-            }
-            catch
-            {
-            }
-        }
-
-        private void BtPlayFromFavList_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                int element = (windowStations.selectionFavListId);
-                if (element >= 0)
-                {
-                    string uri = windowStations.giveUrlFavList(windowStations.selectionFavListId).ToString();
-                    MessageBox.Show("Let's listen to this server: " + uri);
-                    mediaElement.Source = new Uri(uri);
-                    mediaElement.Play();
-                }
-            }
-            catch
-            {
-            }
-        }
-
-        private void BtDelete_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                favManager.delete(windowStations.selectionFavListId);
-            }
-            catch
-            {
-            }
-        }
-
-        private void BtTop20_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/top%2040/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtPop_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/pop/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtAlternative_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/alternative/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtlEctronic_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/electronic/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtRock_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/rock/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtMetal_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/metal/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtSwing_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/swing/?sortby=listeners";
-            bindList(url);
-        }
-
-        private void BtChill_Click(object sender, RoutedEventArgs e)
-        {
-            Sound();
-            var url = "https://www.internet-radio.com/stations/chill/?sortby=listeners";
-            bindList(url);
         }
     }
 }

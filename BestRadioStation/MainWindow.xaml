@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BestRadioStation"
         mc:Ignorable="d" Icon="D:\studia\pobrane.png"
-        Title="Best Radio Station" Height="500" Width="800"  WindowStartupLocation="Manual" Left="200" Top="200">
+        Title="Best Radio Station" Height="548" Width="800"  WindowStartupLocation="Manual" Left="200" Top="200">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -18,11 +18,11 @@
         <Border BorderBrush="Azure" BorderThickness="1" CornerRadius="0,0,30,30">
             <Grid Margin="0,0,-1,0" Visibility="Visible" Opacity="1" OpacityMask="#FFCB6F6F" Height="484" VerticalAlignment="Center" >
                 <MediaElement x:Name="mediaElement" LoadedBehavior="Manual" UnloadedBehavior="Manual" HorizontalAlignment="Left" Height="150" Margin="550,273,0,0" VerticalAlignment="Top" Width="244"/>
-                <Button x:Name="BtStop" Content="Stop" HorizontalAlignment="Left" Margin="246,406,0,0" VerticalAlignment="Top" Click="BtStop_Click" Height="25" Width="52"/>
-                <Button x:Name="BtStart" Content="Start" HorizontalAlignment="Left" Margin="327,406,0,0" VerticalAlignment="Top" Click="BtStart_Click" Height="25" Width="55"/>
-                <Slider x:Name="slider" HorizontalAlignment="Left" Margin="82,409,0,0" VerticalAlignment="Top" Width="120" ValueChanged="slider_ValueChanged" IsMoveToPointEnabled="True" Minimum="0" Maximum="0.2"  />
-                <TextBlock Foreground="White" VerticalAlignment="Top" Margin="92,388,-82,0"  >Volume</TextBlock>
-                <Label x:Name="VolumeLbl" Content="%" HorizontalAlignment="Left" Margin="171,383,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="BtStop" Content="Stop" HorizontalAlignment="Left" Margin="241,440,0,0" VerticalAlignment="Top" Click="BtStop_Click" Height="25" Width="52"/>
+                <Button x:Name="BtStart" Content="Start" HorizontalAlignment="Left" Margin="322,440,0,0" VerticalAlignment="Top" Click="BtStart_Click" Height="25" Width="55"/>
+                <Slider x:Name="slider" HorizontalAlignment="Left" Margin="77,443,0,0" VerticalAlignment="Top" Width="120" ValueChanged="slider_ValueChanged" IsMoveToPointEnabled="True" Minimum="0" Maximum="0.2"  />
+                <TextBlock Foreground="White" VerticalAlignment="Top" Margin="87,422,-77,0"  >Volume</TextBlock>
+                <Label x:Name="VolumeLbl" Content="%" HorizontalAlignment="Left" Margin="166,417,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="BtOpenList" Content="Open Your list of Best radios" HorizontalAlignment="Left" Margin="603,408,0,0" VerticalAlignment="Top" Click="BtOpenList_Click" Width="157"/>
                 <Button x:Name="BtAddRadio" Content="Add radio to your list!" HorizontalAlignment="Left" Margin="460,408,0,0" VerticalAlignment="Top" Click="BtAddRadio_Click" Width="128"/>
                 <Button x:Name="BtDelete" Content="Delete from your list ;(" HorizontalAlignment="Left" Margin="460,442,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.129,-0.179" Height="19" Width="128" Background="#FFFFAC76" Click="BtDelete_Click"/>
@@ -68,6 +68,7 @@
         <Button x:Name="BtChill" Content="Chill" HorizontalAlignment="Left" Margin="697,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtChill_Click"/>
         <Button x:Name="BtTop20" Content="Top 20" HorizontalAlignment="Left" Margin="504,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtTop20_Click"/>
         <Button x:Name="BtPop" Content="Pop" HorizontalAlignment="Left" Margin="600,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtPop_Click"/>
+        <Button x:Name="BtSoundtracks" Content="Soundtracks" HorizontalAlignment="Left" Margin="504,0,0,100" VerticalAlignment="Bottom" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtSoundtracks_Click"/>
         <Label x:Name="label" Content="Top 20 most popular radiostations" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top" Width="430" FontSize="49" FontWeight="Normal" FontFamily="Freestyle Script" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="63" />
     </Grid>
 </Window>
