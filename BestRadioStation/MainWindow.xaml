@@ -27,6 +27,7 @@
                 <Button x:Name="BtAddRadio" Content="Add radio to your list!" HorizontalAlignment="Left" Margin="460,408,0,0" VerticalAlignment="Top" Click="BtAddRadio_Click" Width="128"/>
                 <Button x:Name="BtDelete" Content="Delete from your list ;(" HorizontalAlignment="Left" Margin="460,442,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.129,-0.179" Height="19" Width="128" Background="#FFFFAC76" Click="BtDelete_Click"/>
                 <Button x:Name="BtPlayFromFavList" Content="Play from your fav list :)" HorizontalAlignment="Left" Margin="603,441,0,0" VerticalAlignment="Top" Width="157" Background="#FF7BED50" Click="BtPlayFromFavList_Click"/>
+
             </Grid>
         </Border>
         <ListBox x:Name="ListRadioStat" Cursor="Hand" Margin="0,62,310,120" SelectionChanged="ListRadioStat_SelectionChanged"   HorizontalAlignment="Right" Width="440" >
@@ -49,16 +50,24 @@
                 </LinearGradientBrush>
             </ListBox.Background>
         </ListBox>
-        <Button x:Name="BtAmbient" Content="Ambient" HorizontalAlignment="Left" Margin="535,60,0,0" VerticalAlignment="Top"  Height="36" Width="87" BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  Click="BtAmbient_Click" />
-        <Button x:Name="BtPsytrance" Content="Psytrance" HorizontalAlignment="Left" Margin="535,136,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.129,0.368" Width="87" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtPsytrance_Click"/>
-        <Button x:Name="BtClassic_Rock" Content="Classic Rock" HorizontalAlignment="Left" Margin="535,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtClassic_Rock_Click"/>
-        <Button x:Name="BtDeep_House" Content="Deep House" HorizontalAlignment="Left" Margin="535,278,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtDeep_House_Click"/>
-        <Button x:Name="BtInstrumental" Content="Instrumental " HorizontalAlignment="Left" Margin="535,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtInstrumental_Click"/>
-        <Button x:Name="BtDance" Content="Dance" HorizontalAlignment="Left" Margin="669,60,0,0" VerticalAlignment="Top" Height="36" Width="87" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtDance_Click"/>
-        <Button x:Name="BtClassical" Content="Classical" HorizontalAlignment="Left" Margin="669,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtClassical_Click"/>
-        <Button x:Name="BtHipHop" Content="Hip Hop" HorizontalAlignment="Left" Margin="669,278,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtHipHop_Click"/>
-        <Button x:Name="BtKpop" Content="Kpop" HorizontalAlignment="Left" Margin="669,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtKpop_Click"/>
-        <Button x:Name="BtChristmas" Content="Christmas" HorizontalAlignment="Left" Margin="669,136,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="87" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtChristmas_Click"/>
+        <Button x:Name="BtAmbient" Content="Ambient" HorizontalAlignment="Left" Margin="504,62,0,0" VerticalAlignment="Top"  Height="36" Width="69" BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  Click="BtAmbient_Click"  FontSize="10"/>
+        <Button x:Name="BtPsytrance" Content="Psytrance" HorizontalAlignment="Left" Margin="504,112,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.129,0.368" Width="69" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtPsytrance_Click" FontSize="10"/>
+        <Button x:Name="BtClassic_Rock" Content="Classic Rock" HorizontalAlignment="Left" Margin="504,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtClassic_Rock_Click" FontSize="10"/>
+        <Button x:Name="BtDeep_House" Content="Deep House" HorizontalAlignment="Left" Margin="504,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtDeep_House_Click" FontSize="10"/>
+        <Button x:Name="BtInstrumental" Content="Instrumental " HorizontalAlignment="Left" Margin="504,268,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtInstrumental_Click" FontSize="10"/>
+        <Button x:Name="BtDance" Content="Dance" HorizontalAlignment="Left" Margin="600,62,0,0" VerticalAlignment="Top" Height="36" Width="69" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtDance_Click" FontSize="10"/>
+        <Button x:Name="BtClassical" Content="Classical" HorizontalAlignment="Left" Margin="600,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtClassical_Click" FontSize="10"/>
+        <Button x:Name="BtHipHop" Content="Hip Hop" HorizontalAlignment="Left" Margin="600,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtHipHop_Click" FontSize="10"/>
+        <Button x:Name="BtKpop" Content="Kpop" HorizontalAlignment="Left" Margin="600,268,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtKpop_Click" FontSize="10"/>
+        <Button x:Name="BtChristmas" Content="Christmas" HorizontalAlignment="Left" Margin="600,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtChristmas_Click" FontSize="10"/>
+        <Button x:Name="BtAlternative" Content="Alternative" HorizontalAlignment="Left" Margin="697,62,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtAlternative_Click"/>
+        <Button x:Name="BtlEctronic" Content="Electronic" HorizontalAlignment="Left" Margin="697,112,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1" FontSize="10" Click="BtlEctronic_Click"/>
+        <Button x:Name="BtRock" Content="Rock" HorizontalAlignment="Left" Margin="697,165,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtRock_Click"/>
+        <Button x:Name="BtMetal" Content="Metal" HorizontalAlignment="Left" Margin="697,213,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtMetal_Click"/>
+        <Button x:Name="BtSwing" Content="Swing" HorizontalAlignment="Left" Margin="697,268,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtSwing_Click"/>
+        <Button x:Name="BtChill" Content="Chill" HorizontalAlignment="Left" Margin="697,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtChill_Click"/>
+        <Button x:Name="BtTop20" Content="Top 20" HorizontalAlignment="Left" Margin="504,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtTop20_Click"/>
+        <Button x:Name="BtPop" Content="Pop" HorizontalAlignment="Left" Margin="600,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtPop_Click"/>
         <Label x:Name="label" Content="Top 20 most popular radiostations" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top" Width="430" FontSize="49" FontWeight="Normal" FontFamily="Freestyle Script" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="63" />
     </Grid>
 </Window>

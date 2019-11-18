@@ -200,5 +200,61 @@ namespace BestRadioStation
             {
             }
         }
+
+        private void BtTop20_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/top%2040/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtPop_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/pop/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtAlternative_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/alternative/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtlEctronic_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/electronic/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtRock_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/rock/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtMetal_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/metal/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtSwing_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/swing/?sortby=listeners";
+            bindList(url);
+        }
+
+        private void BtChill_Click(object sender, RoutedEventArgs e)
+        {
+            Sound();
+            var url = "https://www.internet-radio.com/stations/chill/?sortby=listeners";
+            bindList(url);
+        }
     }
 }
