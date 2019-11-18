@@ -9,8 +9,9 @@ namespace BestRadioStation
 {
     class Scrapper
     {
-        public string[] radiostationsName = new string[0];
-        public string[] radiostationsUrl = new string[0];
+        string[] radiostationsName = new string[0];
+        string[] radiostationsUrl = new string[0];
+        public int element;
         public  void GetHtmlNotAsync(string url)
         {
             var url_ = url;
@@ -55,19 +56,17 @@ namespace BestRadioStation
                 {
                     int index = urls.IndexOf('\'');
                     arrWithUrls[k] = urls.Substring(0, index);
-                    k = k + 1;
                 }
-                
+                k = k + 1;
             }
             int l = 0;
-            foreach (var urlsm3u in arrWithUrls)
+            foreach (var urlsm3u in arrWithUrls)   //changing file format to one which can be used in mediaElement
             {
                 if (urlsm3u.Contains("listen.pls"))
                 {
                     arrWithUrls[l] = urlsm3u.Replace("listen.pls", "m3u^");
                     int index = arrWithUrls[l].IndexOf('^');
                     arrWithUrls[l] = arrWithUrls[l].Substring(0, index);
-                    
                 }
                 l = l + 1;
             }
@@ -84,9 +83,14 @@ namespace BestRadioStation
         {
             return radiostationsUrl;
         }
-        public string WhichElement(int elem)
+        public string WhichElementUrl(int elem)
         {
             string element = radiostationsUrl[elem].ToString();
+            return element;
+        }
+        public string WhichElementName(int elem)
+        {
+            string element = radiostationsName[elem].ToString();
             return element;
         }
 

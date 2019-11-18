@@ -19,21 +19,19 @@ using System.Media;
 
 namespace BestRadioStation
 {
-
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class createDirectoryF : Window
     {
         
-
-        public MainWindow()
+        public createDirectoryF()
         {
             InitializeComponent();
         }
-
         Scrapper Scrap = new Scrapper();
+        FavoritueRadioListManager favManager = new FavoritueRadioListManager();
+        WindowFavoritueRadiosList windowStations; 
 
         private void Sound()
         {
@@ -114,7 +112,7 @@ namespace BestRadioStation
         private void BtKpop_Click(object sender, RoutedEventArgs e)
         {
             Sound();
-            var url = "https://www.internet-radio.com/stations/soundtracks/?sortby=listeners";
+            var url = "https://www.internet-radio.com/stations/kpop/?sortby=listeners";
             bindList(url);
 
         }
@@ -124,11 +122,11 @@ namespace BestRadioStation
             int element = (ListRadioStat.SelectedIndex);
             if (element >= 0)
             {
-                string uri = Scrap.WhichElement(element).ToString();
+                Scrap.element = element;
+                string uri = Scrap.WhichElementUrl(element).ToString();
                 MessageBox.Show("Let's listen to this server: "+uri);
                 mediaElement.Source = new Uri(uri);
-                mediaElement.Play();
-             
+                mediaElement.Play();           
             }
            
         }
@@ -146,8 +144,61 @@ namespace BestRadioStation
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             mediaElement.Volume = slider.Value;
-            VolumeLbl.Content = Convert.ToInt32(slider.Value*100).ToString() + " %";
+            VolumeLbl.Content = Convert.ToInt32(slider.Value*500).ToString() + " %";
+        }
+
+        
+        private void BtOpenList_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                windowStations = new WindowFavoritueRadiosList();
+                favManager.readFromList();
+                windowStations.Show();
+            }
+            catch
+            {
+            }
         }
         
+        private void BtAddRadio_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                favManager.addToList(Scrap.WhichElementUrl(Scrap.element), Scrap.WhichElementName(Scrap.element));
+            }
+            catch
+            {
+            }
+        }
+
+        private void BtPlayFromFavList_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int element = (windowStations.selectionFavListId);
+                if (element >= 0)
+                {
+                    string uri = windowStations.giveUrlFavList(windowStations.selectionFavListId).ToString();
+                    MessageBox.Show("Let's listen to this server: " + uri);
+                    mediaElement.Source = new Uri(uri);
+                    mediaElement.Play();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void BtDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                favManager.delete(windowStations.selectionFavListId);
+            }
+            catch
+            {
+            }
+        }
     }
 }
