@@ -21,7 +21,6 @@ namespace BestRadioStation
             }
             return dir;
         }
-
         public void addToList(string radioUrl, string radioName)
         {
             dir = createDirectory();
@@ -58,11 +57,9 @@ namespace BestRadioStation
                     newlines[i] = line;
                     i = i + 1;
                 }
-
             }
             return newlines;
         }
-
         public string[] delete(int id)
         {
             var dir = (Environment.CurrentDirectory + @"\RadioStationsList\List.txt");

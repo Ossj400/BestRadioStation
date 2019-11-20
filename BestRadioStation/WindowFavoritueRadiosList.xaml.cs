@@ -23,30 +23,19 @@ namespace BestRadioStation
         public WindowFavoritueRadiosList()
         {
             InitializeComponent();
-            InitBinding();
+            initBinding();
         }
         string[] fullArray;
         string[] names;
         string[] urls;
         static int count;
         public int selectionFavListId;
-
-        private void CloseListWindow()
-        {
-            Close();
-        }
-
-        private void listBox_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-            // ??? InitBinding();
-        }
-        private void InitBinding()
+        private void initBinding()
         {
             manager = new FavoritueRadioListManager();
             array(); 
             listBox.ItemsSource = names;
         }
-
         private void array()
         {
             fullArray = manager.readFromList();
@@ -64,17 +53,14 @@ namespace BestRadioStation
                 if (((i + 1) % 2) == 0)
                 {
                     urls[i] = line;
-                }
-             
+                }           
              i = i + 1;
             }
         }
-
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectionFavListId = listBox.SelectedIndex;
         }
-
         public string giveUrlFavList(int selectionFav)
         {
             return urls[selectionFav+1];

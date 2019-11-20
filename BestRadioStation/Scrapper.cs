@@ -12,14 +12,13 @@ namespace BestRadioStation
         string[] radiostationsName = new string[0];
         string[] radiostationsUrl = new string[0];
         public int element;
-        public  void GetHtmlNotAsync(string url)
+        public  void getHtmlNotAsync(string url)
         {
             var url_ = url;
             var httpClient = new HttpClient();
            // var html = await httpClient.GetStringAsync(url_);  <<< If I would like to do it Async
             //var htmlDocument = new HtmlDocument();
             //htmlDocument.LoadHtml(html);
-
             HtmlWeb web = new HtmlWeb();
             HtmlDocument htmlDocument = web.Load(url_);
 
@@ -36,7 +35,6 @@ namespace BestRadioStation
                 arrWithNames[i] = string.Format("{0}). {1}", i + 1, Names.InnerText);
                 i = i + 1;
             }
-
             int j = 0;
             foreach (var Names in radioUrlHtmlDoc)
             {
@@ -74,21 +72,20 @@ namespace BestRadioStation
             radiostationsName = arrWithNames;
             radiostationsUrl = arrWithUrls;
         }
-
-        public string[] GetRadioName()
+        public string[] getRadioName()
         {
             return radiostationsName;
         }
-        public string[] GetRadioUrl()
+        public string[] getRadioUrl()
         {
             return radiostationsUrl;
         }
-        public string WhichElementUrl(int elem)
+        public string whichElementUrl(int elem)
         {
             string element = radiostationsUrl[elem].ToString();
             return element;
         }
-        public string WhichElementName(int elem)
+        public string whichElementName(int elem)
         {
             string element = radiostationsName[elem].ToString();
             return element;

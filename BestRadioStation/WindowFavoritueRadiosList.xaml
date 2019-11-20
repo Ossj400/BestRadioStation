@@ -14,7 +14,7 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <ListBox x:Name="listBox" Margin="10,10,10,10" BorderThickness="3" BorderBrush="Bisque" SourceUpdated="listBox_SourceUpdated" SelectionChanged="listBox_SelectionChanged" FontStyle="Normal" FontWeight="UltraLight" FontStretch="ExtraExpanded" FontSize="18" FontFamily="Rockwell">
+        <ListBox x:Name="listBox" Margin="10,10,10,10" BorderThickness="3" BorderBrush="Bisque" SelectionChanged="listBox_SelectionChanged" FontStyle="Normal" FontWeight="UltraLight" FontStretch="ExtraExpanded" FontSize="18" FontFamily="Rockwell">
             <ListBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFD0A400" Offset="0"/>
