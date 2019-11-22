@@ -30,7 +30,8 @@ namespace BestRadioStation
         }
         Scrapper Scrap = new Scrapper();
         FavoritueRadioListManager favManager = new FavoritueRadioListManager();
-        WindowFavoritueRadiosList windowStations = new WindowFavoritueRadiosList(); 
+        WindowFavoritueRadiosList windowStations = new WindowFavoritueRadiosList();
+        SongsList windowSongs = new SongsList();
         private void Sound()
         {
             new SoundPlayer(@"C:\Users\Artur\source\repos\BestRadioStation\button11.wav").Play();
@@ -122,6 +123,29 @@ namespace BestRadioStation
             catch
             {
             }  
+        }
+        private void BtAddSong_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                favManager.addToListSongs(Scrap.scrapSongName(Scrap.element));
+            }
+            catch
+            {
+            }
+        }
+        private void BtOpenSongList_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                windowSongs.Close();
+                windowSongs = new SongsList();
+                favManager.readFromListSongs();
+                windowSongs.Show();
+            }
+            catch
+            {
+            }
         }
         private void BtTop20_Click(object sender, RoutedEventArgs e)
         {
@@ -238,6 +262,16 @@ namespace BestRadioStation
             Sound();
             var url = "https://www.internet-radio.com/stations/kpop/?sortby=listeners";
             bindList(url);
+        }
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                TxtBoxSongName.Text = Scrap.scrapSongName(Scrap.element);
+            }
+            catch
+            {
+            }
         }
     }
 }

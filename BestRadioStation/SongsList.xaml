@@ -1,4 +1,4 @@
-﻿<Window x:Class="BestRadioStation.WindowFavoritueRadiosList"
+﻿<Window x:Class="BestRadioStation.SongsList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:BestRadioStation"
         mc:Ignorable="d"
         Icon="D:\studia\pobrane.png"
-        Title="Favoritue Radiostations List" Height="600" Width="500" WindowStartupLocation="Manual" Left="1050" Top="100">
+        Title="Favorite Songs List" Height="600" Width="500" WindowStartupLocation="Manual" Left="0" Top="100">
 
     <Grid Background="#FFC6EAF7">
-        <ListBox x:Name="listBox" Margin="10,10,10,10" BorderThickness="1" BorderBrush="Azure" SelectionChanged="listBox_SelectionChanged" FontStyle="Normal" FontWeight="UltraLight" FontStretch="ExtraExpanded" FontSize="18" FontFamily="Rockwell" Background="#FFC6EAF7">
+        <ListBox x:Name="listBoxSong" Margin="10,10,10,10" BorderThickness="1" BorderBrush="Azure" FontStyle="Normal" FontWeight="UltraLight" FontStretch="ExtraExpanded" FontSize="18" FontFamily="Rockwell" Background="#FFC6EAF7">
 
         </ListBox>
 
     </Grid>
 </Window>
+

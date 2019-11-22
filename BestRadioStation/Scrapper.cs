@@ -12,7 +12,8 @@ namespace BestRadioStation
         string[] radiostationsName = new string[0];
         string[] radiostationsUrl = new string[0];
         public int element;
-        public  void getHtmlNotAsync(string url)
+        string url;
+        public string getHtmlNotAsync(string url)
         {
             var url_ = url;
             var httpClient = new HttpClient();
@@ -26,7 +27,7 @@ namespace BestRadioStation
             .Where(node => node.Attributes.Contains("class") &&
             node.Attributes["class"].Value.Contains("a"));
             HtmlNodeCollection radioUrlHtmlDoc = htmlDocument.DocumentNode.SelectNodes("//small[@class='hidden-xs']/a[@title='PLS Playlist File']");
-
+      //      HtmlNodeCollection songName = htmlDocument.DocumentNode.SelectNodes("/html/body/div/div/div/table/tbody/tr/td/b");
             string[] arrWithNames = new string[radioStNameHtmlDoc.Count()];
             string[] arrWithUrls = new string[radioUrlHtmlDoc.Count()];
             int i = 0;
@@ -71,6 +72,18 @@ namespace BestRadioStation
 
             radiostationsName = arrWithNames;
             radiostationsUrl = arrWithUrls;
+            return  this.url= url;
+        }
+
+        public string scrapSongName(int elem)
+        {
+            var url_ = url;
+            var httpClient = new HttpClient();
+            HtmlWeb web = new HtmlWeb();
+            HtmlDocument htmlDocument = web.Load(url_);
+            HtmlNodeCollection songNameDoc = htmlDocument.DocumentNode.SelectNodes("/html/body/div/div/div/table/tbody/tr/td/b");
+            string song = songNameDoc[elem].InnerHtml.ToString();
+            return song;
         }
         public string[] getRadioName()
         {

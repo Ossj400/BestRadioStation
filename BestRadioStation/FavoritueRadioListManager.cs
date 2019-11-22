@@ -10,7 +10,7 @@ namespace BestRadioStation
     {
         string dir;
         public string[] newlinesDel;
-        public string createDirectory()
+        public string createDirectoryToRadiostations()
         {
             string path = (Environment.CurrentDirectory);
             var dir = (path + @"\RadioStationsList\List.txt");
@@ -23,7 +23,7 @@ namespace BestRadioStation
         }
         public void addToList(string radioUrl, string radioName)
         {
-            dir = createDirectory();
+            dir = createDirectoryToRadiostations();
 
             using (StreamWriter str = File.AppendText(dir))    // inserting this data without any formatting 
             {
@@ -68,17 +68,46 @@ namespace BestRadioStation
             int i = 0;
             int j = 0;
             using (StreamWriter writer = new StreamWriter(dir))
-            foreach (string line in newlinestemp)
-            {          
-                    if (i != id && i !=id+1 )
+                foreach (string line in newlinestemp)
+                {
+                    if (i != id && i != id + 1)
                     {
                         newlinesDel[j] = line;
                         writer.WriteLine(newlinesDel[j]);
                         j = j + 1;
-                    }   
-                i = i + 1;
-            }
+                    }
+                    i = i + 1;
+                }
             return newlinesDel;
+        }
+        public string createDirectoryToSongs()
+        {
+            string path = (Environment.CurrentDirectory);
+            var dir = (path + @"\RadioStationsList\ListSongs.txt");
+            if (File.Exists(dir) == false)
+            {
+                Directory.CreateDirectory("ListSongs");
+                StreamWriter str = File.CreateText(path + @"\RadioStationsList\ListSongs.txt");
+            }
+            return dir;
+        }
+
+        public string[] readFromListSongs()
+        {
+            var dir = (Environment.CurrentDirectory + @"\RadioStationsList\ListSongs.txt");
+            string[] lines = File.ReadAllLines(dir, Encoding.UTF8);
+
+            return lines;
+        }
+
+        public void addToListSongs(string songName)
+        {
+            var dir = (Environment.CurrentDirectory + @"\RadioStationsList\ListSongs.txt");
+
+            using (StreamWriter str = File.AppendText(dir))    // inserting this data without any formatting 
+            {
+                str.WriteLine(songName);
+            }
         }
     }
 }
