@@ -18,7 +18,7 @@ namespace BestRadioStation
     public partial class SongsList : Window
     {
         private FavoritueRadioListManager manager;
-
+        public int selectionSongListId;
         public SongsList()
         {
             InitializeComponent();
@@ -28,6 +28,10 @@ namespace BestRadioStation
         {
             manager = new FavoritueRadioListManager();
             listBoxSong.ItemsSource = manager.readFromListSongs();
+        }
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectionSongListId = listBoxSong.SelectedIndex;
         }
     }
 }

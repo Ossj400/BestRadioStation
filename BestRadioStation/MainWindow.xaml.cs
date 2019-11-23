@@ -115,7 +115,7 @@ namespace BestRadioStation
         {
             try
             {
-                favManager.delete(windowStations.selectionFavListId);
+                favManager.deleteRadiostation(windowStations.selectionFavListId);
                 windowStations.Close();
                 windowStations = new WindowFavoritueRadiosList();
                 windowStations.Show();
@@ -124,11 +124,14 @@ namespace BestRadioStation
             {
             }  
         }
-        private void BtAddSong_Click(object sender, RoutedEventArgs e)
+        private void BattAddSong_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 favManager.addToListSongs(Scrap.scrapSongName(Scrap.element));
+                windowSongs.Close();
+                windowSongs = new SongsList();
+                windowSongs.Show();
             }
             catch
             {
@@ -263,11 +266,25 @@ namespace BestRadioStation
             var url = "https://www.internet-radio.com/stations/kpop/?sortby=listeners";
             bindList(url);
         }
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void BattNowPlays_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 TxtBoxSongName.Text = Scrap.scrapSongName(Scrap.element);
+            }
+            catch
+            {
+            }
+        }
+
+        private void BtDeleteSongss(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                favManager.deleteSong(windowSongs.selectionSongListId);
+                windowSongs.Close();
+                windowSongs = new SongsList();
+                windowSongs.Show();
             }
             catch
             {

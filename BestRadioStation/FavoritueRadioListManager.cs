@@ -60,7 +60,7 @@ namespace BestRadioStation
             }
             return newlines;
         }
-        public string[] delete(int id)
+        public string[] deleteRadiostation(int id)
         {
             var dir = (Environment.CurrentDirectory + @"\RadioStationsList\List.txt");
             string[] newlinestemp = readFromList();
@@ -108,6 +108,27 @@ namespace BestRadioStation
             {
                 str.WriteLine(songName);
             }
+        }
+
+        public string[] deleteSong(int id)
+        {
+            var dir = (Environment.CurrentDirectory + @"\RadioStationsList\ListSongs.txt");
+            string[] newlinestemp = readFromListSongs();
+            newlinesDel = new string[newlinestemp.Length];
+            int i = 0;
+            int j = 0;
+            using (StreamWriter writer = new StreamWriter(dir))
+                foreach (string line in newlinestemp)
+                {
+                    if (i != id)
+                    {
+                        newlinesDel[j] = line;
+                        writer.WriteLine(newlinesDel[j]);
+                        j = j + 1;
+                    }
+                    i = i + 1;
+                }
+            return newlinesDel;
         }
     }
 }

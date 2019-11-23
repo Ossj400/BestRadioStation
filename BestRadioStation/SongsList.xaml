@@ -9,7 +9,7 @@
         Title="Favorite Songs List" Height="600" Width="500" WindowStartupLocation="Manual" Left="0" Top="100">
 
     <Grid Background="#FFC6EAF7">
-        <ListBox x:Name="listBoxSong" Margin="10,10,10,10" BorderThickness="1" BorderBrush="Azure" FontStyle="Normal" FontWeight="UltraLight" FontStretch="ExtraExpanded" FontSize="18" FontFamily="Rockwell" Background="#FFC6EAF7">
+        <ListBox x:Name="listBoxSong" Margin="10,10,10,10" BorderThickness="1" BorderBrush="Azure" FontStyle="Normal" FontWeight="UltraLight" FontStretch="ExtraExpanded" FontSize="18" FontFamily="Rockwell" Background="#FFC6EAF7" SelectionChanged="listBox_SelectionChanged">
 
         </ListBox>
 
