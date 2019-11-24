@@ -44,7 +44,7 @@ namespace BestRadioStation
                 {
                     try
                     {
-                        newlines[i] = string.Format("{0}).{1}", j, line.Remove(0, 3));
+                        newlines[i] = string.Format("{0}){1}", j, line.Remove(0, 3));
                         j = j + 1;
                         i = i + 1;
                     }

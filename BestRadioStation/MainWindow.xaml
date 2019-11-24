@@ -13,17 +13,17 @@
                 <Border BorderThickness="1,2,1,1" BorderBrush="Azure" Margin="0,410,0,-60" Background="#FFB5F983" CornerRadius="0,0,30,30" HorizontalAlignment="Center" Width="784" Height="110">
                 </Border>
                 <MediaElement x:Name="mediaElement" LoadedBehavior="Manual" UnloadedBehavior="Manual" HorizontalAlignment="Left" Height="150" Margin="550,273,0,0" VerticalAlignment="Top" Width="244"/>
-                <Button x:Name="BtStop" Content="Stop" HorizontalAlignment="Left" Margin="241,440,0,0" VerticalAlignment="Top" Click="BtStop_Click" Height="25" Width="52"/>
-                <Button x:Name="BtStart" Content="Start" HorizontalAlignment="Left" Margin="322,440,0,0" VerticalAlignment="Top" Click="BtStart_Click" Height="25" Width="55"/>
-                <Slider x:Name="slider" HorizontalAlignment="Left" Margin="72,451,0,0" VerticalAlignment="Top" Width="120" ValueChanged="slider_ValueChanged" IsMoveToPointEnabled="True" Minimum="0" Maximum="0.2"  />
-                <TextBlock Foreground="SlateBlue" VerticalAlignment="Top" Margin="72,432,665,0"  ><Run Text="Volume"/></TextBlock>
-                <Label x:Name="VolumeLbl" Content="%" HorizontalAlignment="Left" Margin="137,427,0,0" VerticalAlignment="Top" Width="40" Foreground="SlateBlue"/>
+                <Button x:Name="BtStop" Content="Stop" HorizontalAlignment="Left" Margin="241,430,0,0" VerticalAlignment="Top" Click="BtStop_Click" Height="25" Width="52"/>
+                <Button x:Name="BtStart" Content="Start" HorizontalAlignment="Left" Margin="322,430,0,0" VerticalAlignment="Top" Click="BtStart_Click" Height="25" Width="55"/>
+                <Slider x:Name="slider" HorizontalAlignment="Left" Margin="65,460,0,0" VerticalAlignment="Top" Width="120" ValueChanged="slider_ValueChanged" IsMoveToPointEnabled="True" Minimum="0" Maximum="0.2"  />
+                <TextBlock Foreground="SlateBlue" VerticalAlignment="Top" Margin="72,444,665,0"  ><Run Text="Volume"/></TextBlock>
+                <Label x:Name="VolumeLbl" Content="%" HorizontalAlignment="Left" Margin="137,440,0,0" VerticalAlignment="Top" Width="40" Foreground="SlateBlue"/>
                 <Button x:Name="BtOpenList" Content="Open Your list of Best radios" HorizontalAlignment="Left" Margin="564,431,0,0" VerticalAlignment="Top" Click="BtOpenList_Click" Width="158"/>
                 <Button x:Name="BtAddRadio" Content="Add radio to your list!" HorizontalAlignment="Left" Margin="422,431,0,0" VerticalAlignment="Top" Click="BtAddRadio_Click" Width="128"/>
-                <Button x:Name="BtDelete" Content="Delete from your list ;(" HorizontalAlignment="Left" Margin="422,465,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.129,-0.179" Height="19" Width="128" Background="#FFFFAC76" Click="BtDelete_Click"/>
+                <Button x:Name="BtDelete" Content="Delete from your list ;(" HorizontalAlignment="Left" Margin="422,465,0,0" VerticalAlignment="Top" Height="19" Width="128" Background="#FFFFAC76" Click="BtDelete_Click"/>
                 <Button x:Name="BtPlayFromFavList" Content="Play from your fav list :)" HorizontalAlignment="Left" Margin="564,464,0,0" VerticalAlignment="Top" Width="158" Background="#FF7BED50" Click="BtPlayFromFavList_Click"/>
                 <Label x:Name="LblNowPlays" HorizontalAlignment="Left" Margin="139,385.5,0,0" VerticalAlignment="Top" Width="341" >
-                    <TextBox x:Name="TxtBoxSongName" Text="" TextWrapping="Wrap" Width="341" Foreground="DarkSlateBlue" Background="LemonChiffon" />
+                    <TextBox x:Name="TxtBoxSongName" Text=" Works only if song is playing from this ^ list :(" TextWrapping="Wrap" Width="341" Foreground="DarkSlateBlue" Background="LemonChiffon" />
                 </Label>
                 <Button x:Name="button" Content="Now playing?" HorizontalAlignment="Left" Margin="35,389,0,0" VerticalAlignment="Top" Width="97" Click="BattNowPlays_Click"/>
 
@@ -49,7 +49,7 @@
                 </LinearGradientBrush>
             </ListBox.Background>
         </ListBox>
-        <Button x:Name="BatonDel" Content="Delete song from list ;(" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-4.129,-0.179" Height="19" Width="128" Background="#FFFFAC76" Click="BtDeleteSongss" Margin="122,554,0,0"/>
+       
         <Button x:Name="BtAmbient" Content="Ambient" HorizontalAlignment="Left" Margin="504,62,0,0" VerticalAlignment="Top"  Height="36" Width="69" BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  Click="BtAmbient_Click"  FontSize="10"/>
         <Button x:Name="BtPsytrance" Content="Psytrance" HorizontalAlignment="Left" Margin="504,112,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.129,0.368" Width="69" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtPsytrance_Click" FontSize="10"/>
         <Button x:Name="BtClassic_Rock" Content="Classic Rock" HorizontalAlignment="Left" Margin="504,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.129,0.368" Width="69" Height="36" BorderBrush="AliceBlue" BorderThickness="3,1,3,1" Click="BtClassic_Rock_Click" FontSize="10"/>
@@ -68,10 +68,10 @@
         <Button x:Name="BtChill" Content="Chill" HorizontalAlignment="Left" Margin="697,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtChill_Click"/>
         <Button x:Name="BtTop20" Content="Top 20" HorizontalAlignment="Left" Margin="504,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtTop20_Click"/>
         <Button x:Name="BtPop" Content="Pop" HorizontalAlignment="Left" Margin="600,324,0,0" VerticalAlignment="Top" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtPop_Click"/>
-        <Button x:Name="BtSoundtracks" Content="Soundtracks" HorizontalAlignment="Left" Margin="504,0,0,130" VerticalAlignment="Bottom" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtSoundtracks_Click"/>
+        <Button x:Name="BtSoundtracks" Content="Soundtracks" HorizontalAlignment="Left" Margin="504,0,0,180" VerticalAlignment="Bottom" Width="69" Height="36"  BorderBrush="AliceBlue" BorderThickness="3,1,3,1"  FontSize="10" Click="BtSoundtracks_Click"/>
         <Label x:Name="label" Content="Top 20 most popular radiostations" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top" Width="430" FontSize="31" FontWeight="Normal" FontFamily="Bernard MT Condensed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="63" />
-        <Button x:Name="BatonAddSong1" Content="Add song to your list!" HorizontalAlignment="Left" Margin="50,530,0,0" VerticalAlignment="Top" Click="BattAddSong_Click" Width="128"/>
-        <Button x:Name="BtOpenListSongs" Content="Open Your list of best songs" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtOpenSongList_Click" Width="158" Margin="207,530,0,0"/>
-
+        <Button x:Name="BatonAddSong1" Content="Add song to your list!" HorizontalAlignment="Left" Margin="70,560,0,0" VerticalAlignment="Top" Click="BattAddSong_Click" Width="128"/>
+        <Button x:Name="BtOpenListSongs" Content="Open Your list of best songs" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtOpenSongList_Click" Width="158" Height="19" Margin="230,524,0,0"/>
+        <Button x:Name="BatonDel" Content="Delete song from list ;(" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="128" Background="#FFFFAC76" Click="BtDeleteSongss" Margin="245,560,0,0"/>
     </Grid>
 </Window>

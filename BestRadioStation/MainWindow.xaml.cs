@@ -38,7 +38,6 @@ namespace BestRadioStation
         }
         private string bindList(string url)
         {
-
             Scrap.getHtmlNotAsync(url);
             ListRadioStat.ItemsSource = Scrap.getRadioName();
             return null;
