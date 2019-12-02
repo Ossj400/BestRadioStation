@@ -22,12 +22,10 @@ namespace BestRadioStation
             //htmlDocument.LoadHtml(html);
             HtmlWeb web = new HtmlWeb();
             HtmlDocument htmlDocument = web.Load(url_);
-
             IEnumerable<HtmlNode> radioStNameHtmlDoc = htmlDocument.DocumentNode.Descendants("h4")
             .Where(node => node.Attributes.Contains("class") &&
             node.Attributes["class"].Value.Contains("a"));
             HtmlNodeCollection radioUrlHtmlDoc = htmlDocument.DocumentNode.SelectNodes("//small[@class='hidden-xs']/a[@title='PLS Playlist File']");
-      //      HtmlNodeCollection songName = htmlDocument.DocumentNode.SelectNodes("/html/body/div/div/div/table/tbody/tr/td/b");
             string[] arrWithNames = new string[radioStNameHtmlDoc.Count()];
             string[] arrWithUrls = new string[radioUrlHtmlDoc.Count()];
             int i = 0;

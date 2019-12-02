@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:BestRadioStation"
         mc:Ignorable="d" Icon="D:\studia\pobrane.png"
         Title="Best Radio Station" Height="640" Width="800"  WindowStartupLocation="Manual" Left="360" Top="100">
-    <Grid Background="#FFC6EAF7">
+    <Grid Background="AliceBlue">
 
-        <Border BorderBrush="Azure" BorderThickness="1" CornerRadius="0,0,30,30">
+        <Border BorderBrush="CadetBlue" BorderThickness="1" CornerRadius="0,0,30,30">
             <Grid Margin="0,0,-1,0" Visibility="Visible" Opacity="1" OpacityMask="#FFCB6F6F" Height="484" VerticalAlignment="Center" >
-                <Border BorderThickness="1,2,1,1" BorderBrush="Azure" Margin="0,410,0,-60" Background="#FFB5F983" CornerRadius="0,0,30,30" HorizontalAlignment="Center" Width="784" Height="110">
+                <Border BorderThickness="1,1,1,1" BorderBrush="DarkSlateBlue" Margin="0,405,1,-60" Background="LightSteelBlue" CornerRadius="30,30,30,30" HorizontalAlignment="Center" Width="784" Height="110">
                 </Border>
                 <MediaElement x:Name="mediaElement" LoadedBehavior="Manual" UnloadedBehavior="Manual" HorizontalAlignment="Left" Height="150" Margin="550,273,0,0" VerticalAlignment="Top" Width="244"/>
                 <Button x:Name="BtStop" Content="Stop" HorizontalAlignment="Left" Margin="241,430,0,0" VerticalAlignment="Top" Click="BtStop_Click" Height="25" Width="52"/>
