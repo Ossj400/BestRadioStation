@@ -1,5 +1,5 @@
 # BestRadioStation
-Choose your favorite radio (WPF app - scraping from html page) - practising good practices
+Choose your favorite radio (WPF app - scraping from html page) - here I trie to practise good, solid practices.
 
 I needed to practise my C# skills, use some good practices and wished to try design pattern (but project is too small for practical use of these, I think).
 How it works? 
